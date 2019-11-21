@@ -51,4 +51,5 @@ edit-in-vim(){
 	[[ -z $BUFFER ]] && zle up-history
 	edit-command-line
 }
+zle -N edit-in-vim
 bindkey '^e' edit-in-vim
