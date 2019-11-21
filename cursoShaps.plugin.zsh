@@ -14,7 +14,7 @@
 # vession
 # -----------
 #
-# 0.1.0 beta
+# 0.1.1 beta
 #
 # ------------------------------------------------------------------------------
 
@@ -40,16 +40,3 @@ zle -N zle-line-init
 
 echo -ne '\e[5 q'                # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q'; } # Use beam shape cursor for each new prompt.
-
-
-### Edit line in vi with ctrl+e
-autoload edit-command-line
-zle -N edit-command-line
-edit-in-vim(){
-	set VISUAL = vim
-	set EDITOR = vim	
-	[[ -z $BUFFER ]] && zle up-history
-	edit-command-line
-}
-zle -N edit-in-vim
-bindkey '^e' edit-in-vim
